@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3781CE1212C611B524FA7DA9 /* Pods_DataGetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6D29E2C7A9C5C47541F0D0 /* Pods_DataGetter.framework */; };
+		C11B3A941C6E502F00F05BA8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11B3A931C6E502F00F05BA8 /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		C11B3A961C6E50C400F05BA8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11B3A951C6E50C400F05BA8 /* RegisterViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		C11B3A981C6E57C400F05BA8 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11B3A971C6E57C400F05BA8 /* Login.swift */; settings = {ASSET_TAGS = (); }; };
 		C17440F21C6A609500CD8996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17440F11C6A609500CD8996 /* AppDelegate.swift */; };
-		C17440F41C6A609500CD8996 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17440F31C6A609500CD8996 /* ViewController.swift */; };
+		C17440F41C6A609500CD8996 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17440F31C6A609500CD8996 /* LoginViewController.swift */; };
 		C17440F71C6A609500CD8996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17440F51C6A609500CD8996 /* Main.storyboard */; };
 		C17440F91C6A609500CD8996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C17440F81C6A609500CD8996 /* Assets.xcassets */; };
 		C17440FC1C6A609500CD8996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17440FA1C6A609500CD8996 /* LaunchScreen.storyboard */; };
@@ -34,9 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		999429B9B68CECE2EAB924F0 /* Pods-DataGetter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataGetter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DataGetter/Pods-DataGetter.debug.xcconfig"; sourceTree = "<group>"; };
+		BF85EDC2D980574E32436919 /* Pods-DataGetter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataGetter.release.xcconfig"; path = "Pods/Target Support Files/Pods-DataGetter/Pods-DataGetter.release.xcconfig"; sourceTree = "<group>"; };
+		C11B3A931C6E502F00F05BA8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C11B3A951C6E50C400F05BA8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C11B3A971C6E57C400F05BA8 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		C17440EE1C6A609500CD8996 /* DataGetter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataGetter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17440F11C6A609500CD8996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C17440F31C6A609500CD8996 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C17440F31C6A609500CD8996 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C17440F61C6A609500CD8996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C17440F81C6A609500CD8996 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C17440FB1C6A609500CD8996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +56,7 @@
 		C174410D1C6A609600CD8996 /* DataGetterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataGetterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17441111C6A609600CD8996 /* DataGetterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGetterUITests.swift; sourceTree = "<group>"; };
 		C17441131C6A609600CD8996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD6D29E2C7A9C5C47541F0D0 /* Pods_DataGetter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataGetter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3781CE1212C611B524FA7DA9 /* Pods_DataGetter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62A18828EB369616EA904A11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD6D29E2C7A9C5C47541F0D0 /* Pods_DataGetter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		675FD1E8B5785AC906CE6FCD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				999429B9B68CECE2EAB924F0 /* Pods-DataGetter.debug.xcconfig */,
+				BF85EDC2D980574E32436919 /* Pods-DataGetter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C17440E51C6A609500CD8996 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +109,8 @@
 				C17441051C6A609600CD8996 /* DataGetterTests */,
 				C17441101C6A609600CD8996 /* DataGetterUITests */,
 				C17440EF1C6A609500CD8996 /* Products */,
+				675FD1E8B5785AC906CE6FCD /* Pods */,
+				62A18828EB369616EA904A11 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,8 +128,11 @@
 			isa = PBXGroup;
 			children = (
 				C17440F11C6A609500CD8996 /* AppDelegate.swift */,
-				C17440F31C6A609500CD8996 /* ViewController.swift */,
+				C17440F31C6A609500CD8996 /* LoginViewController.swift */,
 				C17440F51C6A609500CD8996 /* Main.storyboard */,
+				C11B3A971C6E57C400F05BA8 /* Login.swift */,
+				C11B3A951C6E50C400F05BA8 /* RegisterViewController.swift */,
+				C11B3A931C6E502F00F05BA8 /* MainViewController.swift */,
 				C17440F81C6A609500CD8996 /* Assets.xcassets */,
 				C17440FA1C6A609500CD8996 /* LaunchScreen.storyboard */,
 				C17440FD1C6A609500CD8996 /* Info.plist */,
@@ -132,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C17441161C6A609600CD8996 /* Build configuration list for PBXNativeTarget "DataGetter" */;
 			buildPhases = (
+				F562BF522FB7D71E0F8B5421 /* Check Pods Manifest.lock */,
 				C17440EA1C6A609500CD8996 /* Sources */,
 				C17440EB1C6A609500CD8996 /* Frameworks */,
 				C17440EC1C6A609500CD8996 /* Resources */,
+				2CA211567100F5C32178EFAE /* Embed Pods Frameworks */,
+				3D7215577C91DB90E8140AC2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,13 +289,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2CA211567100F5C32178EFAE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DataGetter/Pods-DataGetter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D7215577C91DB90E8140AC2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DataGetter/Pods-DataGetter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F562BF522FB7D71E0F8B5421 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C17440EA1C6A609500CD8996 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C17440F41C6A609500CD8996 /* ViewController.swift in Sources */,
+				C11B3A941C6E502F00F05BA8 /* MainViewController.swift in Sources */,
+				C11B3A981C6E57C400F05BA8 /* Login.swift in Sources */,
+				C17440F41C6A609500CD8996 /* LoginViewController.swift in Sources */,
 				C17440F21C6A609500CD8996 /* AppDelegate.swift in Sources */,
+				C11B3A961C6E50C400F05BA8 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +484,7 @@
 		};
 		C17441171C6A609600CD8996 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 999429B9B68CECE2EAB924F0 /* Pods-DataGetter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DataGetter/Info.plist;
@@ -408,6 +496,7 @@
 		};
 		C17441181C6A609600CD8996 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF85EDC2D980574E32436919 /* Pods-DataGetter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DataGetter/Info.plist;
@@ -484,6 +573,7 @@
 				C17441181C6A609600CD8996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C17441191C6A609600CD8996 /* Build configuration list for PBXNativeTarget "DataGetterTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +582,7 @@
 				C174411B1C6A609600CD8996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C174411C1C6A609600CD8996 /* Build configuration list for PBXNativeTarget "DataGetterUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +591,7 @@
 				C174411E1C6A609600CD8996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
