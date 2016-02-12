@@ -9,5 +9,11 @@
 import UIKit
 
 class Login: NSObject {
-
+    var userEmail: String
+    var userPassword: String
+    var userFullName: String
+    
+    override init() {
+        //START HERE
+    }
 }
