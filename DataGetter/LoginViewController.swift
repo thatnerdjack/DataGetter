@@ -9,6 +9,9 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    var login = Login()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +22,12 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    @IBAction func hitLogin(sender: AnyObject) {
+        if (!login.loginUser(emailField.text!, userPassword: passwordField.text!)) {
+            let alert = UIAlertController(title: "Login Error", message: "You're login didn't work", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        }
+    }
+    
 }

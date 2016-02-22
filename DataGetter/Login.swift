@@ -9,11 +9,23 @@
 import UIKit
 
 class Login: NSObject {
-    var userEmail: String
-    var userPassword: String
-    var userFullName: String
+    var backendless = Backendless.sharedInstance()
     
-    override init() {
-        //START HERE
+    func loginUser(userEmail: String, userPassword: String) -> Bool {
+        var didLogin = false
+        Types.tryblock(
+            { () -> Void in
+                var registeredUser = self.backendless.userService.login(userEmail, password: userPassword)
+                print("User has been logged in (SYNC): \(registeredUser)")
+                didLogin = true
+            },
+            catchblock: { (exception) -> Void in
+                print("Server reported an error: \(exception as! Fault)")
+        })
+        return didLogin
     }
+    
+//    func registerUser(userEmail: String, userPassword: String, userFullName: String) {
+//        
+//    }
 }
