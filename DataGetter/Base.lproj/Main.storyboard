@@ -7,6 +7,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="DataGetter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -26,14 +27,14 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="hitLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qQi-Ss-Aez"/>
-                                    <segue destination="MLP-11-WLW" kind="show" id="uIM-ka-xFh"/>
+                                    <segue destination="MLP-11-WLW" kind="show" identifier="loginToMain" id="uIM-ka-xFh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLV-XX-gtm">
                                 <rect key="frame" x="272" y="428" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <segue destination="dty-rf-pJa" kind="show" id="P4c-TP-Hwc"/>
+                                    <segue destination="dty-rf-pJa" kind="show" identifier="loginToReg" id="P4c-TP-Hwc"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQh-tP-hkQ">
@@ -50,6 +51,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3E-6F-3Hm">
+                                <rect key="frame" x="189" y="466" width="90" height="30"/>
+                                <state key="normal" title="FORCE MAIN"/>
+                                <connections>
+                                    <segue destination="MLP-11-WLW" kind="show" identifier="FORCEloginToMain" id="Ofw-Q4-BT0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fgu-ep-I8R">
+                                <rect key="frame" x="329" y="466" width="82" height="30"/>
+                                <state key="normal" title="FORCE REG"/>
+                                <connections>
+                                    <segue destination="dty-rf-pJa" kind="show" identifier="FORCEloginToReg" id="ODa-Qa-Ry8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -60,8 +75,12 @@
                             <constraint firstItem="XQh-tP-hkQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N5F-Ps-MHS"/>
                             <constraint firstItem="CLV-XX-gtm" firstAttribute="top" secondItem="4aS-jO-MbK" secondAttribute="bottom" constant="25" id="PEl-bk-xaT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CLV-XX-gtm" secondAttribute="bottom" constant="142" id="PlH-6Z-oRA"/>
+                            <constraint firstItem="c3E-6F-3Hm" firstAttribute="leading" secondItem="Gsg-xU-IyO" secondAttribute="leading" id="PtF-zt-9Zk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Fgu-ep-I8R" secondAttribute="bottom" constant="104" id="Pyf-Jq-n05"/>
                             <constraint firstItem="CLV-XX-gtm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X1f-3M-5rs"/>
+                            <constraint firstItem="Fgu-ep-I8R" firstAttribute="trailing" secondItem="Gsg-xU-IyO" secondAttribute="trailing" id="YQO-u9-TMy"/>
                             <constraint firstItem="4aS-jO-MbK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hV6-Eg-EA4"/>
+                            <constraint firstItem="Fgu-ep-I8R" firstAttribute="baseline" secondItem="c3E-6F-3Hm" secondAttribute="baseline" id="lTq-Iq-xsl"/>
                             <constraint firstItem="4aS-jO-MbK" firstAttribute="top" secondItem="Gsg-xU-IyO" secondAttribute="bottom" constant="25" id="mdV-lo-ojg"/>
                             <constraint firstItem="poy-LB-5bQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nC8-yM-vWK"/>
                         </constraints>
@@ -71,7 +90,6 @@
                         <outlet property="passwordField" destination="Gsg-xU-IyO" id="dyL-9l-cFo"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="565" y="490"/>
         </scene>
@@ -157,40 +175,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ps3-d4-18t">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ps3-d4-18t">
                                 <rect key="frame" x="384" y="248" width="30" height="30"/>
                                 <state key="normal" title="Set"/>
+                                <connections>
+                                    <action selector="setNum:" destination="MLP-11-WLW" eventType="touchUpInside" id="J9l-7R-997"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hrc-Zk-yLS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hrc-Zk-yLS">
                                 <rect key="frame" x="384" y="310" width="30" height="30"/>
                                 <state key="normal" title="Get"/>
+                                <connections>
+                                    <action selector="getNum:" destination="MLP-11-WLW" eventType="touchUpInside" id="KqD-OT-w8F"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3kB-Hp-rm7">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3kB-Hp-rm7">
                                 <rect key="frame" x="252" y="245" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Num" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAE-tw-vWP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Num" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAE-tw-vWP">
                                 <rect key="frame" x="282" y="314" width="37" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello, Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fK7-3q-WBx">
-                                <rect key="frame" x="252" y="113" width="93" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dWG-Li-Qgo">
+                                <rect key="frame" x="231" y="143" width="189" height="27"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctP-LY-0H6">
+                                        <rect key="frame" x="0.0" y="0.0" width="61" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoU-eG-9JH">
+                                        <rect key="frame" x="61" y="0.0" width="128" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ps3-d4-18t" firstAttribute="leading" secondItem="3kB-Hp-rm7" secondAttribute="trailing" constant="35" id="0gK-Ou-hwK"/>
                             <constraint firstItem="3kB-Hp-rm7" firstAttribute="centerX" secondItem="Fck-fe-Gfh" secondAttribute="centerX" id="84q-B7-E3A"/>
+                            <constraint firstItem="dWG-Li-Qgo" firstAttribute="centerX" secondItem="Fck-fe-Gfh" secondAttribute="centerX" id="8Ff-wK-tgk"/>
+                            <constraint firstItem="Hrc-Zk-yLS" firstAttribute="leading" secondItem="ps3-d4-18t" secondAttribute="leading" id="A8s-Zi-aBc"/>
+                            <constraint firstItem="Hrc-Zk-yLS" firstAttribute="baseline" secondItem="IAE-tw-vWP" secondAttribute="baseline" id="Gd3-yw-m70"/>
+                            <constraint firstItem="3kB-Hp-rm7" firstAttribute="top" secondItem="dWG-Li-Qgo" secondAttribute="bottom" constant="75" id="NQF-Xc-FA0"/>
+                            <constraint firstItem="IAE-tw-vWP" firstAttribute="top" secondItem="3kB-Hp-rm7" secondAttribute="bottom" constant="39" id="WZg-VG-Pr4"/>
                             <constraint firstItem="IAE-tw-vWP" firstAttribute="centerX" secondItem="Fck-fe-Gfh" secondAttribute="centerX" id="fXP-rQ-q40"/>
+                            <constraint firstItem="Hrc-Zk-yLS" firstAttribute="top" secondItem="ps3-d4-18t" secondAttribute="bottom" constant="32" id="qBe-2n-f6d"/>
+                            <constraint firstItem="tul-em-cdM" firstAttribute="top" secondItem="Hrc-Zk-yLS" secondAttribute="bottom" constant="260" id="qIH-Py-eVw"/>
                             <constraint firstItem="Hrc-Zk-yLS" firstAttribute="leading" secondItem="IAE-tw-vWP" secondAttribute="trailing" constant="65" id="yP2-rL-5Ae"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="RoU-eG-9JH" id="xLn-FT-VmY"/>
+                        <outlet property="numGetLabel" destination="IAE-tw-vWP" id="uOK-vC-LHo"/>
+                        <outlet property="numSetField" destination="3kB-Hp-rm7" id="SPv-6a-blU"/>
+                        <outlet property="setNum" destination="ps3-d4-18t" id="dIf-u1-rHD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3I-ys-pvb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -198,6 +246,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uIM-ka-xFh"/>
+        <segue reference="Ofw-Q4-BT0"/>
+        <segue reference="P4c-TP-Hwc"/>
     </inferredMetricsTieBreakers>
 </document>

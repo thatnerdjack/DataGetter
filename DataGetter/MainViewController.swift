@@ -9,11 +9,17 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var numSetField: UITextField!
+    @IBOutlet weak var numGetLabel: UILabel!
+    
+    let backendless = Backendless.sharedInstance()
+    
+//    var user: BackendlessUser = Backendless.sharedInstance().userService.currentUser
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+//        nameLabel.text = (user.getProperty("name") as! String)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +27,11 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func setNum(sender: AnyObject) {
+    }
 
+    @IBAction func getNum(sender: AnyObject) {
+    }
     
 
 }

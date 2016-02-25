@@ -23,10 +23,17 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //code
+    }
+    
     @IBAction func hitLogin(sender: AnyObject) {
         if (!login.loginUser(emailField.text!, userPassword: passwordField.text!)) {
             let alert = UIAlertController(title: "Login Error", message: "You're login didn't work", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else {
+            performSegueWithIdentifier("loginToMain", sender: nil)
         }
     }
     
