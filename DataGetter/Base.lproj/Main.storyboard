@@ -31,6 +31,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLV-XX-gtm">
                                 <rect key="frame" x="272" y="428" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
+                                <connections>
+                                    <segue destination="dty-rf-pJa" kind="show" identifier="loginToReg" id="nWu-1T-CSP"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQh-tP-hkQ">
                                 <rect key="frame" x="272" y="191" width="55" height="27"/>
@@ -84,7 +87,6 @@
                         <outlet property="emailField" destination="poy-LB-5bQ" id="zIL-bq-zAG"/>
                         <outlet property="passwordField" destination="Gsg-xU-IyO" id="dyL-9l-cFo"/>
                         <segue destination="MLP-11-WLW" kind="show" identifier="loginToMain" id="SXQ-PW-4vb"/>
-                        <segue destination="dty-rf-pJa" kind="show" identifier="loginToReg" id="fhm-yX-tXo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -156,6 +158,11 @@
                             <constraint firstItem="INv-tb-amQ" firstAttribute="centerX" secondItem="CjH-0R-HFG" secondAttribute="centerX" id="sci-Qs-nzM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userEmail" destination="INv-tb-amQ" id="Qil-MI-6Gs"/>
+                        <outlet property="userFullName" destination="fnM-mP-GN2" id="oo5-Vf-dn8"/>
+                        <outlet property="userPassword" destination="rZ5-WU-NVw" id="534-y9-fuf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljj-sz-4A0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -243,7 +250,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="nWu-1T-CSP"/>
         <segue reference="SXQ-PW-4vb"/>
-        <segue reference="fhm-yX-tXo"/>
     </inferredMetricsTieBreakers>
 </document>

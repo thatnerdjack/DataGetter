@@ -11,9 +11,8 @@ import UIKit
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    var login = Login()
     
-    let backendless = Backendless.sharedInstance()
+    var login = Login()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +23,13 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //code
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if(segue.identifier == "loginToReg") {
+//            let DVC = segue.destinationViewController as! RegisterViewController
+//            DVC.userEmail.text = emailField.text!
+//            DVC.userPassword.text = passwordField.text!
+//        }
+//    }
     
     @IBAction func hitLogin(sender: AnyObject) {
         if (!login.loginUser(emailField.text!, userPassword: passwordField.text!)) {
