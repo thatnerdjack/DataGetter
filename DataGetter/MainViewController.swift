@@ -15,11 +15,11 @@ class MainViewController: UIViewController {
     
     let backendless = Backendless.sharedInstance()
     
-//    var user: BackendlessUser = Backendless.sharedInstance().userService.currentUser
+    var user: BackendlessUser = Backendless.sharedInstance().userService.currentUser
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        nameLabel.text = (user.getProperty("name") as! String)
+        nameLabel.text = (user.getProperty("name") as! String)
     }
 
     override func didReceiveMemoryWarning() {

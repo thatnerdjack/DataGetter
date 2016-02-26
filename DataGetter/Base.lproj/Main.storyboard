@@ -7,7 +7,6 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="DataGetter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -27,15 +26,11 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="hitLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qQi-Ss-Aez"/>
-                                    <segue destination="MLP-11-WLW" kind="show" identifier="loginToMain" id="uIM-ka-xFh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLV-XX-gtm">
                                 <rect key="frame" x="272" y="428" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
-                                <connections>
-                                    <segue destination="dty-rf-pJa" kind="show" identifier="loginToReg" id="P4c-TP-Hwc"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQh-tP-hkQ">
                                 <rect key="frame" x="272" y="191" width="55" height="27"/>
@@ -88,8 +83,11 @@
                     <connections>
                         <outlet property="emailField" destination="poy-LB-5bQ" id="zIL-bq-zAG"/>
                         <outlet property="passwordField" destination="Gsg-xU-IyO" id="dyL-9l-cFo"/>
+                        <segue destination="MLP-11-WLW" kind="show" identifier="loginToMain" id="SXQ-PW-4vb"/>
+                        <segue destination="dty-rf-pJa" kind="show" identifier="loginToReg" id="fhm-yX-tXo"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="565" y="490"/>
         </scene>
@@ -237,7 +235,6 @@
                         <outlet property="nameLabel" destination="RoU-eG-9JH" id="xLn-FT-VmY"/>
                         <outlet property="numGetLabel" destination="IAE-tw-vWP" id="uOK-vC-LHo"/>
                         <outlet property="numSetField" destination="3kB-Hp-rm7" id="SPv-6a-blU"/>
-                        <outlet property="setNum" destination="ps3-d4-18t" id="dIf-u1-rHD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3I-ys-pvb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -246,7 +243,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ofw-Q4-BT0"/>
-        <segue reference="P4c-TP-Hwc"/>
+        <segue reference="SXQ-PW-4vb"/>
+        <segue reference="fhm-yX-tXo"/>
     </inferredMetricsTieBreakers>
 </document>
