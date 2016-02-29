@@ -131,7 +131,7 @@
                                 <rect key="frame" x="272" y="405" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <segue destination="MLP-11-WLW" kind="show" id="dAw-Ev-1R4"/>
+                                    <action selector="hitReg:" destination="dty-rf-pJa" eventType="touchUpInside" id="Wbs-Mb-p8P"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="INv-tb-amQ">
@@ -162,6 +162,7 @@
                         <outlet property="userEmail" destination="INv-tb-amQ" id="Qil-MI-6Gs"/>
                         <outlet property="userFullName" destination="fnM-mP-GN2" id="oo5-Vf-dn8"/>
                         <outlet property="userPassword" destination="rZ5-WU-NVw" id="534-y9-fuf"/>
+                        <segue destination="MLP-11-WLW" kind="show" identifier="regToMain" id="lUB-NG-u7m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljj-sz-4A0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -251,6 +252,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="nWu-1T-CSP"/>
-        <segue reference="SXQ-PW-4vb"/>
+        <segue reference="lUB-NG-u7m"/>
     </inferredMetricsTieBreakers>
 </document>

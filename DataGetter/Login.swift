@@ -15,7 +15,7 @@ class Login: NSObject {
         var didLogin = false
         Types.tryblock(
             { () -> Void in
-                var registeredUser = self.backendless.userService.login(userEmail, password: userPassword)
+                let registeredUser = self.backendless.userService.login(userEmail, password: userPassword)
                 print("User has been logged in (SYNC): \(registeredUser)")
                 didLogin = true
             },
@@ -25,7 +25,24 @@ class Login: NSObject {
         return didLogin
     }
     
-//    func registerUser(userEmail: String, userPassword: String, userFullName: String) {
-//        
-//    }
+    func registerUser(userEmail: String, userPassword: String, userFullName: String) -> Bool {
+        var didRegister = false
+        Types.tryblock(
+            { () -> Void in
+                let user = BackendlessUser()
+                user.email = userEmail
+                user.password = userPassword
+                user.setProperty("name", object: userFullName)
+                
+                let registeredUser = self.backendless.userService.registering(user)
+                print("Uuser has been registerd (SYNC): \(registeredUser)")
+                
+                self.loginUser(registeredUser.email, userPassword: registeredUser.password)
+                didRegister = true
+            },
+            catchblock: { (exception) -> Void in
+                print("Server reported an error: \(exception as! Fault)")
+        })
+        return didRegister
+    }
 }
