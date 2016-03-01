@@ -195,15 +195,10 @@
                                     <action selector="getNum:" destination="MLP-11-WLW" eventType="touchUpInside" id="KqD-OT-w8F"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3kB-Hp-rm7">
-                                <rect key="frame" x="252" y="245" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Num" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAE-tw-vWP">
-                                <rect key="frame" x="282" y="314" width="37" height="21"/>
+                                <rect key="frame" x="332" y="314" width="37" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dWG-Li-Qgo">
@@ -212,32 +207,56 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctP-LY-0H6">
                                         <rect key="frame" x="0.0" y="0.0" width="61" height="27"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoU-eG-9JH">
                                         <rect key="frame" x="61" y="0.0" width="128" height="27"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nickname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p3F-d6-VBg">
+                                <rect key="frame" x="190" y="248" width="133" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="num" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3kB-Hp-rm7">
+                                <rect key="frame" x="324" y="248" width="50" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQf-ot-XtD">
+                                <rect key="frame" x="220" y="314" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ps3-d4-18t" firstAttribute="leading" secondItem="3kB-Hp-rm7" secondAttribute="trailing" constant="35" id="0gK-Ou-hwK"/>
-                            <constraint firstItem="3kB-Hp-rm7" firstAttribute="centerX" secondItem="Fck-fe-Gfh" secondAttribute="centerX" id="84q-B7-E3A"/>
                             <constraint firstItem="dWG-Li-Qgo" firstAttribute="centerX" secondItem="Fck-fe-Gfh" secondAttribute="centerX" id="8Ff-wK-tgk"/>
                             <constraint firstItem="Hrc-Zk-yLS" firstAttribute="leading" secondItem="ps3-d4-18t" secondAttribute="leading" id="A8s-Zi-aBc"/>
                             <constraint firstItem="Hrc-Zk-yLS" firstAttribute="baseline" secondItem="IAE-tw-vWP" secondAttribute="baseline" id="Gd3-yw-m70"/>
-                            <constraint firstItem="3kB-Hp-rm7" firstAttribute="top" secondItem="dWG-Li-Qgo" secondAttribute="bottom" constant="75" id="NQF-Xc-FA0"/>
-                            <constraint firstItem="IAE-tw-vWP" firstAttribute="top" secondItem="3kB-Hp-rm7" secondAttribute="bottom" constant="39" id="WZg-VG-Pr4"/>
-                            <constraint firstItem="IAE-tw-vWP" firstAttribute="centerX" secondItem="Fck-fe-Gfh" secondAttribute="centerX" id="fXP-rQ-q40"/>
+                            <constraint firstItem="Hrc-Zk-yLS" firstAttribute="leading" secondItem="IAE-tw-vWP" secondAttribute="trailing" constant="15" id="IXV-iP-p3c"/>
+                            <constraint firstAttribute="trailing" secondItem="3kB-Hp-rm7" secondAttribute="trailing" constant="226" id="Iud-Mq-r3g"/>
+                            <constraint firstItem="3kB-Hp-rm7" firstAttribute="top" secondItem="ps3-d4-18t" secondAttribute="top" id="Iuh-Dy-aws"/>
+                            <constraint firstItem="IAE-tw-vWP" firstAttribute="leading" secondItem="TQf-ot-XtD" secondAttribute="trailing" constant="35" id="JA8-fS-v24"/>
+                            <constraint firstItem="3kB-Hp-rm7" firstAttribute="top" secondItem="dWG-Li-Qgo" secondAttribute="bottom" constant="78" id="nIE-4y-uyM"/>
+                            <constraint firstItem="ps3-d4-18t" firstAttribute="leading" secondItem="3kB-Hp-rm7" secondAttribute="trailing" constant="10" id="pZd-f1-tGc"/>
                             <constraint firstItem="Hrc-Zk-yLS" firstAttribute="top" secondItem="ps3-d4-18t" secondAttribute="bottom" constant="32" id="qBe-2n-f6d"/>
                             <constraint firstItem="tul-em-cdM" firstAttribute="top" secondItem="Hrc-Zk-yLS" secondAttribute="bottom" constant="260" id="qIH-Py-eVw"/>
+                            <constraint firstItem="3kB-Hp-rm7" firstAttribute="leading" secondItem="p3F-d6-VBg" secondAttribute="trailing" constant="1" id="tws-bC-8SV"/>
+                            <constraint firstItem="3kB-Hp-rm7" firstAttribute="baseline" secondItem="p3F-d6-VBg" secondAttribute="baseline" id="vVF-rn-X4T"/>
                             <constraint firstItem="Hrc-Zk-yLS" firstAttribute="leading" secondItem="IAE-tw-vWP" secondAttribute="trailing" constant="65" id="yP2-rL-5Ae"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="yP2-rL-5Ae"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="nameLabel" destination="RoU-eG-9JH" id="xLn-FT-VmY"/>
