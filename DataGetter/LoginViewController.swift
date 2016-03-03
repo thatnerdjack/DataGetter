@@ -41,4 +41,8 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func hitFORCEMAIN(sender: AnyObject) {
+        login.loginUser("test@test.com", userPassword: "test")
+        performSegueWithIdentifier("loginToMain", sender: nil)
+    }
 }

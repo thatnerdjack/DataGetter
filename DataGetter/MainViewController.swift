@@ -10,7 +10,9 @@ import UIKit
 
 class MainViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nicknameSetField: UITextField!
     @IBOutlet weak var numSetField: UITextField!
+    @IBOutlet weak var nicknameGetField: UILabel!
     @IBOutlet weak var numGetLabel: UILabel!
     
     let backendless = Backendless.sharedInstance()
@@ -28,6 +30,9 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func setNum(sender: AnyObject) {
+        if let setNick = nicknameSetField.text {
+            
+        }
     }
 
     @IBAction func getNum(sender: AnyObject) {
