@@ -15,6 +15,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var nicknameGetField: UILabel!
     @IBOutlet weak var numGetLabel: UILabel!
     
+    var setNick: String?
+    var setNum: Int?
+    
     let backendless = Backendless.sharedInstance()
     
     var user: BackendlessUser = Backendless.sharedInstance().userService.currentUser
@@ -30,9 +33,20 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func setNum(sender: AnyObject) {
-        if let setNick = nicknameSetField.text {
-            
+        if let doesHaveNick = nicknameSetField.text {
+            setNick = doesHaveNick
         }
+        if let doesHaveNum = numSetField.text {
+            setNum = Int(doesHaveNum)
+        }
+        
+//        Types.tryblock(
+//            { () -> Void in
+//                var dataObjects = self.backendless.persistenceService.of(DataObject.ofClass())
+//            },
+//            catchblock: { (exception) -> Void in
+//            })
+        //IS THIS REALLY THE BEST WAY TO DO THIS??? CHECK THE API DOCS!
     }
 
     @IBAction func getNum(sender: AnyObject) {

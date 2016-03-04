@@ -18,6 +18,7 @@
 		C17440FC1C6A609500CD8996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17440FA1C6A609500CD8996 /* LaunchScreen.storyboard */; };
 		C17441071C6A609600CD8996 /* DataGetterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17441061C6A609600CD8996 /* DataGetterTests.swift */; };
 		C17441121C6A609600CD8996 /* DataGetterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17441111C6A609600CD8996 /* DataGetterUITests.swift */; };
+		C1E2DDAD1C8A0BF100CA26CB /* DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E2DDAC1C8A0BF100CA26CB /* DataObject.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		C174410D1C6A609600CD8996 /* DataGetterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataGetterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17441111C6A609600CD8996 /* DataGetterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGetterUITests.swift; sourceTree = "<group>"; };
 		C17441131C6A609600CD8996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1E2DDAC1C8A0BF100CA26CB /* DataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataObject.swift; sourceTree = "<group>"; };
 		CD6D29E2C7A9C5C47541F0D0 /* Pods_DataGetter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataGetter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 				C11B3A971C6E57C400F05BA8 /* Login.swift */,
 				C11B3A951C6E50C400F05BA8 /* RegisterViewController.swift */,
 				C11B3A931C6E502F00F05BA8 /* MainViewController.swift */,
+				C1E2DDAC1C8A0BF100CA26CB /* DataObject.swift */,
 				C17440F81C6A609500CD8996 /* Assets.xcassets */,
 				C17440FA1C6A609500CD8996 /* LaunchScreen.storyboard */,
 				C17440FD1C6A609500CD8996 /* Info.plist */,
@@ -346,6 +349,7 @@
 				C11B3A981C6E57C400F05BA8 /* Login.swift in Sources */,
 				C17440F41C6A609500CD8996 /* LoginViewController.swift in Sources */,
 				C17440F21C6A609500CD8996 /* AppDelegate.swift in Sources */,
+				C1E2DDAD1C8A0BF100CA26CB /* DataObject.swift in Sources */,
 				C11B3A961C6E50C400F05BA8 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
