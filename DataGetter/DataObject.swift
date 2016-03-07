@@ -8,9 +8,11 @@
 
 import UIKit
 
-class DataObject: BackendlessEntity {
+class DataObject: NSObject {
+    var objectId : String?
+    var created: NSDate?
+    var updated: NSDate?
     
-    var dataName: String?
-    var dataInt: Int = 0
-
+    var nickname: String?
+    var num: Int = 0
 }
