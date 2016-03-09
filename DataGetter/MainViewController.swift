@@ -44,13 +44,19 @@ class MainViewController: UIViewController {
             response: { (result: AnyObject!) -> Void in
                 let obj = result as! DataObject
                 print("Data has been succesfully saved: \(obj.objectId)")
+                self.nicknameSetField.text = ""
+                self.numSetField.text = ""
             },
             error: { (fault: Fault!) -> Void in
                 print("Server reported an error: \(fault)")
+                let alert = UIAlertController(title: "Set Error", message: "Data failed to set.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
         })
     }
 
     @IBAction func getNum(sender: AnyObject) {
+        
     }
     
 

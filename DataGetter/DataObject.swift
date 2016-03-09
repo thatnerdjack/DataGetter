@@ -12,6 +12,7 @@ class DataObject: NSObject {
     var objectId : String?
     var created: NSDate?
     var updated: NSDate?
+    var ownerId: String?
     
     var nickname: String?
     var num: Int = 0
