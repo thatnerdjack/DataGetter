@@ -56,7 +56,17 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func getNum(sender: AnyObject) {
+        let dataStore = self.backendless.data.of(DataObject.ofClass())
         
+        dataStore.find({ (result: BackendlessCollection!) -> Void in
+            let datas = result.getCurrentPage()
+            for d in datas {
+                //figure out whats going on here
+                print("Nick: \((d.nickname)!!) Num: \(d.num)")
+            }
+            }, error: { (fault: Fault!) -> Void in
+                print("Server reported an error: \(fault)")
+        })
     }
     
 
