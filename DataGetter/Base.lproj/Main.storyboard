@@ -259,7 +259,8 @@
                     </view>
                     <connections>
                         <outlet property="nameLabel" destination="RoU-eG-9JH" id="xLn-FT-VmY"/>
-                        <outlet property="nicknameGetField" destination="TQf-ot-XtD" id="s8t-Yb-Jfv"/>
+                        <outlet property="nicknameGetField" destination="kwj-zI-7sH" id="MNl-Uh-b6U"/>
+                        <outlet property="nicknameGetLabel" destination="TQf-ot-XtD" id="Cch-YC-fdP"/>
                         <outlet property="nicknameSetField" destination="p3F-d6-VBg" id="HiN-kH-swf"/>
                         <outlet property="numGetLabel" destination="IAE-tw-vWP" id="uOK-vC-LHo"/>
                         <outlet property="numSetField" destination="3kB-Hp-rm7" id="SPv-6a-blU"/>

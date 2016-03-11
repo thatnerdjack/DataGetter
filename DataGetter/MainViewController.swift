@@ -12,7 +12,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nicknameSetField: UITextField!
     @IBOutlet weak var numSetField: UITextField!
-    @IBOutlet weak var nicknameGetField: UILabel!
+    @IBOutlet weak var nicknameGetField: UITextField!
+    @IBOutlet weak var nicknameGetLabel: UILabel!
     @IBOutlet weak var numGetLabel: UILabel!
     
     let backendless = Backendless.sharedInstance()
@@ -59,10 +60,17 @@ class MainViewController: UIViewController {
         let dataStore = self.backendless.data.of(DataObject.ofClass())
         
         dataStore.find({ (result: BackendlessCollection!) -> Void in
-            let datas = result.getCurrentPage()
-            for d in datas {
-                //figure out whats going on here
-                print("Nick: \((d.nickname)!!) Num: \(d.num)")
+            var getSuccess = false
+            while !getSuccess {
+                var datas = result.getCurrentPage()
+                for d in datas {
+                    if d.nickname == self.nicknameGetField.text! {
+                        self.nicknameGetLabel.text = d.nickname
+                        self.numGetLabel.text = "\(d.num)"
+                        self.nicknameGetField.text = ""
+                        getSuccess = true
+                    }
+                }
             }
             }, error: { (fault: Fault!) -> Void in
                 print("Server reported an error: \(fault)")
