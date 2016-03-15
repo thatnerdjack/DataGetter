@@ -57,29 +57,29 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func getNum(sender: AnyObject) {
-//        let dataStore = self.backendless.data.of(DataObject.ofClass())
-//        
-//        dataStore.find({ (result: BackendlessCollection!) -> Void in
-//            var getSuccess = false
-//            var index = 0
-//            while !getSuccess {
-//                var datas = result.getCurrentPage()
-//                for d in datas {
-//                    if d.nickname == self.nicknameGetField.text! {
-//                        self.nicknameGetLabel.text = d.nickname
-//                        self.numGetLabel.text = "\(d.num)"
-//                        self.nicknameGetField.text = ""
-//                        getSuccess = true
-//                    } else {
-//                        print("Object not found \(index))")
-//                    }
-//                    index++
-//                }
-//                datas = result.nextPage().getCurrentPage()
-//            }
-//            }, error: { (fault: Fault!) -> Void in
-//                print("Server reported an error: \(fault)")
-//        })
+        let dataStore = self.backendless.data.of(DataObject.ofClass())
+        
+        dataStore.find({ (result: BackendlessCollection!) -> Void in
+            var getSuccess = false
+            var index = 0
+            while !getSuccess {
+                var datas = result.getCurrentPage()
+                for d in datas {
+                    if d.nickname == self.nicknameGetField.text! {
+                        self.nicknameGetLabel.text = d.nickname
+                        self.numGetLabel.text = "\(d.num)"
+                        self.nicknameGetField.text = ""
+                        getSuccess = true
+                    } else {
+                        print("Object not found \(index))")
+                    }
+                    index++
+                }
+                datas = result.nextPage().getCurrentPage()
+            }
+            }, error: { (fault: Fault!) -> Void in
+                print("Server reported an error: \(fault)")
+        })
         
         
     }
