@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class MainViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
@@ -17,6 +18,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var numGetLabel: UILabel!
     
     let backendless = Backendless.sharedInstance()
+    
+    let PAGESIZE = 10
     
     var user: BackendlessUser = Backendless.sharedInstance().userService.currentUser
 
@@ -62,7 +65,8 @@ class MainViewController: UIViewController {
         dataStore.find({ (result: BackendlessCollection!) -> Void in
             var getSuccess = false
             var index = 0
-            while !getSuccess {
+            var loopCount: Double = 0
+            while !getSuccess && loopCount < ceil(Double((result.totalObjects as Int)/(self.PAGESIZE))){
                 var datas = result.getCurrentPage()
                 for d in datas {
                     if d.nickname == self.nicknameGetField.text! {
@@ -76,6 +80,12 @@ class MainViewController: UIViewController {
                     index++
                 }
                 datas = result.nextPage().getCurrentPage()
+                loopCount++
+            }
+            if !getSuccess {
+                let alert = UIAlertController(title: "Get Error", message: "Data failed to get.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
             }
             }, error: { (fault: Fault!) -> Void in
                 print("Server reported an error: \(fault)")
