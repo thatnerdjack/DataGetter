@@ -48,6 +48,9 @@ class MainViewController: UIViewController {
             response: { (result: AnyObject!) -> Void in
                 let obj = result as! DataObject
                 print("Data has been succesfully saved: \(obj.objectId)")
+                
+                //start here, make a json array of things created byy user, make it a string, add it to user, and then figure out how to read it
+                
                 self.nicknameSetField.text = ""
                 self.numSetField.text = ""
             },
@@ -90,8 +93,10 @@ class MainViewController: UIViewController {
             }, error: { (fault: Fault!) -> Void in
                 print("Server reported an error: \(fault)")
         })
-        
-        
+    }
+    
+    func findByUser() {
+        let ownerID = user.objectId
     }
     
 
