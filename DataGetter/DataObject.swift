@@ -16,4 +16,5 @@ class DataObject: NSObject {
     
     var nickname: String?
     var num: Int = 0
+    
 }

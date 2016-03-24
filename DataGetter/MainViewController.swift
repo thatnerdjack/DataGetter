@@ -49,6 +49,19 @@ class MainViewController: UIViewController {
                 let obj = result as! DataObject
                 print("Data has been succesfully saved: \(obj.objectId)")
                 
+                
+                //START HERE
+                Types.tryblock({ () -> Void in
+                    var dataObjects = self.user.getProperty("dataObjects")
+                    print(dataObjects)
+//                    dataObjects.append(obj.objectId!)
+//                    self.user.setProperty("dataObjects", object: dataObjects)
+//                    self.user = self.backendless.userService.update(self.user)
+                    }, catchblock: { (exception) -> Void in
+                        print("Server reported an error: \(exception as! Fault)")
+                })
+                
+                
                 //start here, make a json array of things created byy user, make it a string, add it to user, and then figure out how to read it
                 
                 self.nicknameSetField.text = ""
