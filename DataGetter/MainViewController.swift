@@ -49,26 +49,22 @@ class MainViewController: UIViewController {
                 let obj = result as! DataObject
                 print("Data has been succesfully saved: \(obj.objectId)")
                 
-                
-                //START HERE
                 Types.tryblock({ () -> Void in
-                    var dataObjects = self.user.getProperty("dataObjects")
-                    print(dataObjects)
-//                    dataObjects.append(obj.objectId!)
-//                    self.user.setProperty("dataObjects", object: dataObjects)
-//                    self.user = self.backendless.userService.update(self.user)
+                    let dataObjects = self.user.getProperty("dataObjects") as! NSMutableArray
+                    dataObjects.addObject(obj)
+                    self.user.setProperty("dataObjects", object: dataObjects)
+                    self.user = self.backendless.userService.update(self.user)
                     }, catchblock: { (exception) -> Void in
                         print("Server reported an error: \(exception as! Fault)")
                 })
                 
-                
-                //start here, make a json array of things created byy user, make it a string, add it to user, and then figure out how to read it
-                
                 self.nicknameSetField.text = ""
                 self.numSetField.text = ""
+                
             },
             error: { (fault: Fault!) -> Void in
                 print("Server reported an error: \(fault)")
+                
                 let alert = UIAlertController(title: "Set Error", message: "Data failed to set.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
@@ -76,40 +72,63 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func getNum(sender: AnyObject) {
-        let dataStore = self.backendless.data.of(DataObject.ofClass())
-        
-        dataStore.find({ (result: BackendlessCollection!) -> Void in
-            var getSuccess = false
-            var index = 0
-            var loopCount: Double = 0
-            while !getSuccess && loopCount < ceil(Double((result.totalObjects as Int)/(self.PAGESIZE))){
-                var datas = result.getCurrentPage()
-                for d in datas {
-                    if d.nickname == self.nicknameGetField.text! {
-                        self.nicknameGetLabel.text = d.nickname
-                        self.numGetLabel.text = "\(d.num)"
-                        self.nicknameGetField.text = ""
-                        getSuccess = true
-                    } else {
-                        print("Object not found \(index))")
-                    }
-                    index++
-                }
-                datas = result.nextPage().getCurrentPage()
-                loopCount++
-            }
-            if !getSuccess {
-                let alert = UIAlertController(title: "Get Error", message: "Data failed to get.", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
-            }
-            }, error: { (fault: Fault!) -> Void in
-                print("Server reported an error: \(fault)")
-        })
+//        let dataStore = self.backendless.data.of(DataObject.ofClass())
+//        
+//        dataStore.find({ (result: BackendlessCollection!) -> Void in
+//            var getSuccess = false
+//            var index = 0
+//            var loopCount: Double = 0
+//            while !getSuccess && loopCount < ceil(Double((result.totalObjects as Int)/(self.PAGESIZE))){
+//                var datas = result.getCurrentPage()
+//                for d in datas {
+//                    if d.nickname == self.nicknameGetField.text! {
+//                        self.nicknameGetLabel.text = d.nickname
+//                        self.numGetLabel.text = "\(d.num)"
+//                        self.nicknameGetField.text = ""
+//                        getSuccess = true
+//                    } else {
+//                        print("Object not found \(index))")
+//                    }
+//                    index++
+//                }
+//                datas = result.nextPage().getCurrentPage()
+//                loopCount++
+//            }
+//            if !getSuccess {
+//                let alert = UIAlertController(title: "Get Error", message: "Data failed to get.", preferredStyle: UIAlertControllerStyle.Alert)
+//                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+//                self.presentViewController(alert, animated: true, completion: nil)
+//            }
+//            }, error: { (fault: Fault!) -> Void in
+//                print("Server reported an error: \(fault)")
+//        })
+        findByUser()
     }
     
     func findByUser() {
-        let ownerID = user.objectId
+        let dataStore = self.backendless.data.of(BackendlessUser.ofClass())
+        var dataObjects : NSMutableArray = []
+        var getSuccess = false
+        
+        dataStore.findID(user.objectId, response: { (result: AnyObject!) -> Void in
+            let foundUser = result as! BackendlessUser
+            print("Found user \(foundUser.email)")
+            dataObjects = foundUser.getProperty("dataObjects") as! NSMutableArray
+            for data in dataObjects {
+                if data.nickname == self.nicknameGetField.text! {
+                    self.nicknameGetLabel.text = data.nickname
+                    self.numGetLabel.text = "\(data.num)"
+                    self.nicknameGetField.text = ""
+                    getSuccess = true
+                }
+            }
+            if !getSuccess {
+                //START HERE! THROW A MESSAGE IF CANT GET. THEN TEST TO SEE IF IT WORKS
+            }
+            },
+            error: { (fault: Fault!) -> Void in
+                print("Server reported an error (find user): \(fault)")
+        })
     }
     
 
