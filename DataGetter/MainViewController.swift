@@ -19,8 +19,6 @@ class MainViewController: UIViewController {
     
     let backendless = Backendless.sharedInstance()
     
-    let PAGESIZE = 10
-    
     var user: BackendlessUser = Backendless.sharedInstance().userService.currentUser
 
     override func viewDidLoad() {
@@ -72,40 +70,6 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func getNum(sender: AnyObject) {
-//        let dataStore = self.backendless.data.of(DataObject.ofClass())
-//        
-//        dataStore.find({ (result: BackendlessCollection!) -> Void in
-//            var getSuccess = false
-//            var index = 0
-//            var loopCount: Double = 0
-//            while !getSuccess && loopCount < ceil(Double((result.totalObjects as Int)/(self.PAGESIZE))){
-//                var datas = result.getCurrentPage()
-//                for d in datas {
-//                    if d.nickname == self.nicknameGetField.text! {
-//                        self.nicknameGetLabel.text = d.nickname
-//                        self.numGetLabel.text = "\(d.num)"
-//                        self.nicknameGetField.text = ""
-//                        getSuccess = true
-//                    } else {
-//                        print("Object not found \(index))")
-//                    }
-//                    index++
-//                }
-//                datas = result.nextPage().getCurrentPage()
-//                loopCount++
-//            }
-//            if !getSuccess {
-//                let alert = UIAlertController(title: "Get Error", message: "Data failed to get.", preferredStyle: UIAlertControllerStyle.Alert)
-//                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-//                self.presentViewController(alert, animated: true, completion: nil)
-//            }
-//            }, error: { (fault: Fault!) -> Void in
-//                print("Server reported an error: \(fault)")
-//        })
-        findByUser()
-    }
-    
-    func findByUser() {
         let dataStore = self.backendless.data.of(BackendlessUser.ofClass())
         var dataObjects : NSMutableArray = []
         var getSuccess = false
@@ -123,7 +87,9 @@ class MainViewController: UIViewController {
                 }
             }
             if !getSuccess {
-                //START HERE! THROW A MESSAGE IF CANT GET. THEN TEST TO SEE IF IT WORKS
+                let alert = UIAlertController(title: "Get Error", message: "Data failed to get. You may not have permission or it may not exist. Please try again.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
             }
             },
             error: { (fault: Fault!) -> Void in
@@ -131,5 +97,4 @@ class MainViewController: UIViewController {
         })
     }
     
-
 }

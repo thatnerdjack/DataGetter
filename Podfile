@@ -5,5 +5,4 @@ use_frameworks!
 
 target 'DataGetter' do
     pod 'Backendless-ios-SDK', '~>3.0.0'
-    pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 end
